@@ -15,7 +15,7 @@
  * Plugin Name: Light-XML Sitemap
  * Plugin URI: https://wordpress.org/plugins/light-xml-sitemap/
  * Description: Light-XML Sitemap dynamically creates dynamic XML Sitemap that comply with Google, Bing, Yahoo! and Ask.com Sitemap protocol.
- * Version: 2.3.5
+ * Version: 2.3.6
  * Author: NeosLab
  * Author URI: https://neoslab.com
  * License: GPL-2.0+
@@ -37,7 +37,7 @@ if(!defined('WPINC'))
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions
 */
-define('LIGHT_XML_SITEMAP_VERSION', '2.3.5');
+define('LIGHT_XML_SITEMAP_VERSION', '2.3.6');
 
 /**
  * The code that runs during plugin activation

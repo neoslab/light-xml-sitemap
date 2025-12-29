@@ -29,6 +29,10 @@ Light-XML Sitemap dynamically creates XML Sitemaps that comply with the Google S
 
 ## Changelog
 
+### 2.3.6 (2025-12-29)
+
+- Code revision and optimization
+
 ### 2.3.5 (2025-12-26)
 
 - Added WPML support
