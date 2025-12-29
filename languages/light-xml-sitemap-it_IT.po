@@ -1,0 +1,111 @@
+# Copyright (C) 2025 NeosLab
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Light-XML Sitemap 2.3.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/light-xml-sitemap\n"
+"Last-Translator: NeosLab <support@neoslab.com>\n"
+"Language-Team: Italiano <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-10-20T05:40:30+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: light-xml-sitemap\n"
+
+#. Plugin Name of the plugin
+#: light-xml-sitemap.php
+#: admin/class-light-xml-sitemap-admin.php:74
+msgid "Light-XML Sitemap"
+msgstr "Mappa del sito Light-XML"
+
+#. Plugin URI of the plugin
+#: light-xml-sitemap.php
+msgid "https://wordpress.org/plugins/light-xml-sitemap/"
+msgstr "https://wordpress.org/plugins/light-xml-sitemap/"
+
+#. Description of the plugin
+#: light-xml-sitemap.php
+msgid "Light-XML Sitemap dynamically creates dynamic XML Sitemap that comply with Google, Bing, Yahoo! and Ask.com Sitemap protocol."
+msgstr "Light-XML Sitemap crea dinamicamente una mappa del sito XML conforme ai protocolli di Google, Bing, Yahoo! e Ask.com."
+
+#. Author of the plugin
+#: light-xml-sitemap.php
+msgid "NeosLab"
+msgstr "NeosLab"
+
+#. Author URI of the plugin
+#: light-xml-sitemap.php
+msgid "https://neoslab.com"
+msgstr "https://neoslab.com"
+
+#: admin/class-light-xml-sitemap-admin.php:86
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:4
+msgid "Your settings have been successfully updated."
+msgstr "Le impostazioni sono state aggiornate con successo."
+
+#: admin/partials/light-xml-sitemap-admin-options.php:33
+msgid "Include Posts"
+msgstr "Includi articoli"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:41
+#: admin/partials/light-xml-sitemap-admin-options.php:53
+msgid "Do you want to include the posts into the sitemap."
+msgstr "Vuoi includere gli articoli nella mappa del sito?"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:45
+msgid "Include Custom Post Types"
+msgstr "Includi tipi di contenuto personalizzati"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:72
+#: admin/partials/light-xml-sitemap-admin-options.php:88
+msgid "Do you want to include the pages into the sitemap."
+msgstr "Vuoi includere le pagine nella mappa del sito?"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:80
+msgid "Include Pages"
+msgstr "Includi pagine"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:92
+msgid "Include Categories"
+msgstr "Includi categorie"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:100
+msgid "Do you want to include the categories into the sitemap."
+msgstr "Vuoi includere le categorie nella mappa del sito?"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:104
+msgid "Include Tags"
+msgstr "Includi tag"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:112
+msgid "Do you want to include the tags into the sitemap."
+msgstr "Vuoi includere i tag nella mappa del sito?"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:116
+msgid "Include Author"
+msgstr "Includi autori"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:124
+msgid "Do you want to include the authors into the sitemap."
+msgstr "Vuoi includere gli autori nella mappa del sito?"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:128
+msgid "Sitemap Name"
+msgstr "Nome della mappa del sito"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:129
+msgid "Enter the sitemap name"
+msgstr "Inserisci il nome della mappa del sito"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:130
+msgid "Set an alternative name for the sitemap index (Leave empty to use the default: sitemap.xml)."
+msgstr "Imposta un nome alternativo per l'indice della mappa del sito (lascia vuoto per usare il predefinito: sitemap.xml)."
+
+#: admin/partials/light-xml-sitemap-admin-options.php:133
+msgid "Update Settings"
+msgstr "Aggiorna impostazioni"

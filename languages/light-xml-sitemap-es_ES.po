@@ -1,0 +1,111 @@
+# Copyright (C) 2025 NeosLab
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Light-XML Sitemap 2.3.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/light-xml-sitemap\n"
+"Last-Translator: NeosLab <support@neoslab.com>\n"
+"Language-Team: Español <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-10-20T05:40:30+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: light-xml-sitemap\n"
+
+#. Plugin Name of the plugin
+#: light-xml-sitemap.php
+#: admin/class-light-xml-sitemap-admin.php:74
+msgid "Light-XML Sitemap"
+msgstr "Mapa del sitio Light-XML"
+
+#. Plugin URI of the plugin
+#: light-xml-sitemap.php
+msgid "https://wordpress.org/plugins/light-xml-sitemap/"
+msgstr "https://wordpress.org/plugins/light-xml-sitemap/"
+
+#. Description of the plugin
+#: light-xml-sitemap.php
+msgid "Light-XML Sitemap dynamically creates dynamic XML Sitemap that comply with Google, Bing, Yahoo! and Ask.com Sitemap protocol."
+msgstr "Light-XML Sitemap crea dinámicamente un mapa del sitio XML que cumple con los protocolos de Google, Bing, Yahoo! y Ask.com."
+
+#. Author of the plugin
+#: light-xml-sitemap.php
+msgid "NeosLab"
+msgstr "NeosLab"
+
+#. Author URI of the plugin
+#: light-xml-sitemap.php
+msgid "https://neoslab.com"
+msgstr "https://neoslab.com"
+
+#: admin/class-light-xml-sitemap-admin.php:86
+msgid "Settings"
+msgstr "Configuración"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:4
+msgid "Your settings have been successfully updated."
+msgstr "La configuración se ha actualizado correctamente."
+
+#: admin/partials/light-xml-sitemap-admin-options.php:33
+msgid "Include Posts"
+msgstr "Incluir entradas"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:41
+#: admin/partials/light-xml-sitemap-admin-options.php:53
+msgid "Do you want to include the posts into the sitemap."
+msgstr "¿Deseas incluir las entradas en el mapa del sitio?"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:45
+msgid "Include Custom Post Types"
+msgstr "Incluir tipos de contenido personalizados"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:72
+#: admin/partials/light-xml-sitemap-admin-options.php:88
+msgid "Do you want to include the pages into the sitemap."
+msgstr "¿Deseas incluir las páginas en el mapa del sitio?"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:80
+msgid "Include Pages"
+msgstr "Incluir páginas"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:92
+msgid "Include Categories"
+msgstr "Incluir categorías"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:100
+msgid "Do you want to include the categories into the sitemap."
+msgstr "¿Deseas incluir las categorías en el mapa del sitio?"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:104
+msgid "Include Tags"
+msgstr "Incluir etiquetas"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:112
+msgid "Do you want to include the tags into the sitemap."
+msgstr "¿Deseas incluir las etiquetas en el mapa del sitio?"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:116
+msgid "Include Author"
+msgstr "Incluir autores"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:124
+msgid "Do you want to include the authors into the sitemap."
+msgstr "¿Deseas incluir los autores en el mapa del sitio?"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:128
+msgid "Sitemap Name"
+msgstr "Nombre del mapa del sitio"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:129
+msgid "Enter the sitemap name"
+msgstr "Introduce el nombre del mapa del sitio"
+
+#: admin/partials/light-xml-sitemap-admin-options.php:130
+msgid "Set an alternative name for the sitemap index (Leave empty to use the default: sitemap.xml)."
+msgstr "Define un nombre alternativo para el índice del mapa del sitio (déjalo vacío para usar el predeterminado: sitemap.xml)."
+
+#: admin/partials/light-xml-sitemap-admin-options.php:133
+msgid "Update Settings"
+msgstr "Actualizar configuración"
