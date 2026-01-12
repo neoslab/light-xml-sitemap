@@ -39,7 +39,22 @@ if(get_option('blog_public') == '1')
 
                 if((isset($opts['posts'])) && ($opts['posts'] === 'on'))
                 {
-                    $query = "SELECT COUNT(*) FROM `".$wpdb->posts."` WHERE `post_type` = 'post' AND `post_status` = 'publish'";
+                    if(defined('ICL_SITEPRESS_VERSION')) 
+                    {
+                        $deflang = apply_filters('wpml_default_language', NULL);
+                        $query = $wpdb->prepare(
+                            "SELECT COUNT(DISTINCT p.ID) FROM {$wpdb->prefix}posts p 
+                            INNER JOIN {$wpdb->prefix}icl_translations t 
+                            ON p.ID = t.element_id 
+                            WHERE p.post_type = 'post' AND p.post_status = 'publish' 
+                            AND t.language_code = %s",
+                            $deflang
+                        );
+                    } 
+                    else 
+                    {
+                        $query = "SELECT COUNT(*) FROM `".$wpdb->posts."` WHERE `post_type` = 'post' AND `post_status` = 'publish'";
+                    }
                     $count = $wpdb->get_var($query);
 
                     if($count > 0)
@@ -60,7 +75,22 @@ if(get_option('blog_public') == '1')
                 {
                     if((isset($opts[$posttype])) && ($opts[$posttype] === 'on'))
                     {
-                        $query = "SELECT COUNT(*) FROM `".$wpdb->posts."` WHERE `post_type` = '".$posttype."' AND `post_status` = 'publish'";
+                        if(defined('ICL_SITEPRESS_VERSION')) 
+                        {
+                            $deflang = apply_filters('wpml_default_language', NULL);
+                            $query = $wpdb->prepare(
+                                "SELECT COUNT(DISTINCT p.ID) FROM {$wpdb->prefix}posts p 
+                                INNER JOIN {$wpdb->prefix}icl_translations t 
+                                ON p.ID = t.element_id 
+                                WHERE p.post_type = %s AND p.post_status = 'publish' 
+                                AND t.language_code = %s",
+                                $posttype, $deflang
+                            );
+                        } 
+                        else 
+                        {
+                            $query = "SELECT COUNT(*) FROM `".$wpdb->posts."` WHERE `post_type` = '".$posttype."' AND `post_status` = 'publish'";
+                        }
                         $count = $wpdb->get_var($query);
 
                         if($count > 0)
@@ -78,7 +108,22 @@ if(get_option('blog_public') == '1')
 
                 if((isset($opts['pages'])) && ($opts['pages'] === 'on'))
                 {
-                    $query = "SELECT COUNT(*) FROM `".$wpdb->posts."` WHERE `post_type` = 'page' AND `post_status` = 'publish'";
+                    if(defined('ICL_SITEPRESS_VERSION')) 
+                    {
+                        $deflang = apply_filters('wpml_default_language', NULL);
+                        $query = $wpdb->prepare(
+                            "SELECT COUNT(DISTINCT p.ID) FROM {$wpdb->prefix}posts p 
+                            INNER JOIN {$wpdb->prefix}icl_translations t 
+                            ON p.ID = t.element_id 
+                            WHERE p.post_type = 'page' AND p.post_status = 'publish' 
+                            AND t.language_code = %s",
+                            $deflang
+                        );
+                    } 
+                    else 
+                    {
+                        $query = "SELECT COUNT(*) FROM `".$wpdb->posts."` WHERE `post_type` = 'page' AND `post_status` = 'publish'";
+                    }
                     $count = $wpdb->get_var($query);
 
                     if($count > 0)
@@ -95,7 +140,22 @@ if(get_option('blog_public') == '1')
 
                 if((isset($opts['categories'])) && ($opts['categories'] === 'on'))
                 {
-                    $query = "SELECT COUNT(*) FROM `".$wpdb->posts."` WHERE `post_type` = 'post' AND `post_status` = 'publish'";
+                    if(defined('ICL_SITEPRESS_VERSION')) 
+                    {
+                        $deflang = apply_filters('wpml_default_language', NULL);
+                        $query = $wpdb->prepare(
+                            "SELECT COUNT(DISTINCT p.ID) FROM {$wpdb->prefix}posts p 
+                            INNER JOIN {$wpdb->prefix}icl_translations t 
+                            ON p.ID = t.element_id 
+                            WHERE p.post_type = 'post' AND p.post_status = 'publish' 
+                            AND t.language_code = %s",
+                            $deflang
+                        );
+                    } 
+                    else 
+                    {
+                        $query = "SELECT COUNT(*) FROM `".$wpdb->posts."` WHERE `post_type` = 'post' AND `post_status` = 'publish'";
+                    }
                     $count = $wpdb->get_var($query);
 
                     if($count > 0)
@@ -108,7 +168,22 @@ if(get_option('blog_public') == '1')
 
                 if((isset($opts['tags'])) && ($opts['tags'] === 'on'))
                 {
-                    $query = "SELECT COUNT(*) FROM `".$wpdb->posts."` WHERE `post_type` = 'post' AND `post_status` = 'publish'";
+                    if(defined('ICL_SITEPRESS_VERSION')) 
+                    {
+                        $deflang = apply_filters('wpml_default_language', NULL);
+                        $query = $wpdb->prepare(
+                            "SELECT COUNT(DISTINCT p.ID) FROM {$wpdb->prefix}posts p 
+                            INNER JOIN {$wpdb->prefix}icl_translations t 
+                            ON p.ID = t.element_id 
+                            WHERE p.post_type = 'post' AND p.post_status = 'publish' 
+                            AND t.language_code = %s",
+                            $deflang
+                        );
+                    } 
+                    else 
+                    {
+                        $query = "SELECT COUNT(*) FROM `".$wpdb->posts."` WHERE `post_type` = 'post' AND `post_status` = 'publish'";
+                    }
                     $count = $wpdb->get_var($query);
 
                     if($count > 0)
@@ -157,7 +232,25 @@ if(get_option('blog_public') == '1')
                 /**
                  * Query Posts
                 */
-                $sql = "SELECT * FROM `".$wpdb->prefix."posts` WHERE `post_type` = 'post' AND `post_status` = 'publish' ORDER BY `ID` DESC LIMIT ".$calc.", ".$items;
+                if(defined('ICL_SITEPRESS_VERSION')) 
+                {
+                    $deflang = apply_filters('wpml_default_language', NULL);
+                    $sql = $wpdb->prepare(
+                        "SELECT p.* FROM {$wpdb->prefix}posts p 
+                        INNER JOIN {$wpdb->prefix}icl_translations t 
+                        ON p.ID = t.element_id 
+                        WHERE p.post_type = 'post' AND p.post_status = 'publish' 
+                        AND t.language_code = %s 
+                        ORDER BY p.ID DESC 
+                        LIMIT %d, %d",
+                        $deflang, $calc, $items
+                    );
+                } 
+                else 
+                {
+                    $sql = "SELECT * FROM `".$wpdb->prefix."posts` WHERE `post_type` = 'post' AND `post_status` = 'publish' ORDER BY `ID` DESC LIMIT ".$calc.", ".$items;
+                }
+
                 $res = $wpdb->get_results($sql);
         
                 if(!empty($res))
@@ -172,10 +265,25 @@ if(get_option('blog_public') == '1')
                     */
                     $xml = '<?xml version="1.0" encoding="UTF-8"?>'."\n";
                     $xml.= '<?xml-stylesheet type="text/xsl" href="'.plugin_dir_url(__FILE__).'light-xml-sitemap-public-sitemap.xsl"?>'."\n";
-                    $xml.= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'."\n";
+                    $xml.= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">'."\n";
 
+                    if(defined('ICL_SITEPRESS_VERSION')) 
+                    {
+                        global $sitepress;
+                        $languages = apply_filters('wpml_active_languages', NULL, ['skip_missing' => 0]);
+                    }
+
+                    $seen = [];
                     foreach($res as $row)
                     {
+                        $defperm = get_permalink($row->ID);
+                        if(in_array($defperm, $seen)) 
+                        {
+                            continue;
+                        }
+                        
+                        $seen[] = $defperm;
+                        
                         if(has_post_thumbnail($row->ID))
                         {
                             $src = wp_get_attachment_image_src(get_post_thumbnail_id($row->ID), 'thumbnail');
@@ -183,7 +291,26 @@ if(get_option('blog_public') == '1')
 
                         $datetime = str_replace(' ', 'T', esc_attr($row->post_modified)).'+00:00';
                         $xml.= '<url>'."\n";
-                        $xml.= '<loc>'.get_permalink($row->ID).'</loc>'."\n";
+                        $xml.= '<loc>'.esc_url($defperm).'</loc>'."\n";
+
+                        if(!empty($languages)) 
+                        {
+                            $curlang = apply_filters('wpml_current_language', NULL);
+                            foreach($languages as $langcode => $langinfo) 
+                            {
+                                $transid = apply_filters('wpml_object_id', $row->ID, 'post', false, $langcode);
+                                if($transid) 
+                                {
+                                    do_action('wpml_switch_language', $langcode);
+                                    $transperm = get_permalink($transid);
+                                    $xml.= '<xhtml:link rel="alternate" hreflang="'.esc_attr($langcode).'" href="'.esc_url($transperm).'"/>'."\n";
+                                }
+                            }
+
+                            do_action('wpml_switch_language', $curlang);
+                            $xml.= '<xhtml:link rel="alternate" hreflang="x-default" href="'.esc_url($defperm).'"/>'."\n";
+                        }
+
                         $xml.= '<lastmod>'.esc_attr($datetime).'</lastmod>'."\n";
                         $xml.= '<changefreq>hourly</changefreq>'."\n";
                         $xml.= '<priority>0.99</priority>'."\n";
@@ -233,7 +360,25 @@ if(get_option('blog_public') == '1')
                     /**
                      * Query Posts
                     */
-                    $sql = "SELECT * FROM `".$wpdb->prefix."posts` WHERE `post_type` = '".$match[1]."' AND `post_status` = 'publish' ORDER BY `ID` DESC LIMIT ".$calc.", ".$items;
+                    if(defined('ICL_SITEPRESS_VERSION')) 
+                    {
+                        $deflang = apply_filters('wpml_default_language', NULL);
+                        $sql = $wpdb->prepare(
+                            "SELECT p.* FROM {$wpdb->prefix}posts p 
+                            INNER JOIN {$wpdb->prefix}icl_translations t 
+                            ON p.ID = t.element_id 
+                            WHERE p.post_type = %s AND p.post_status = 'publish' 
+                            AND t.language_code = %s 
+                            ORDER BY p.ID DESC 
+                            LIMIT %d, %d",
+                            $match[1], $deflang, $calc, $items
+                        );
+                    } 
+                    else 
+                    {
+                        $sql = "SELECT * FROM `".$wpdb->prefix."posts` WHERE `post_type` = '".$match[1]."' AND `post_status` = 'publish' ORDER BY `ID` DESC LIMIT ".$calc.", ".$items;
+                    }
+
                     $res = $wpdb->get_results($sql);
                 
                     if(!empty($res))
@@ -248,13 +393,47 @@ if(get_option('blog_public') == '1')
                         */
                         $xml = '<?xml version="1.0" encoding="UTF-8"?>'."\n";
                         $xml.= '<?xml-stylesheet type="text/xsl" href="'.plugin_dir_url(__FILE__).'light-xml-sitemap-public-sitemap.xsl"?>'."\n";
-                        $xml.= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'."\n";
+                        $xml.= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'."\n";
 
+                        if(defined('ICL_SITEPRESS_VERSION')) 
+                        {
+                            global $sitepress;
+                            $languages = apply_filters('wpml_active_languages', NULL, ['skip_missing' => 0]);
+                        }
+
+                        $seen = [];
                         foreach($res as $row)
                         {
+                            $defperm = get_permalink($row->ID);
+                            if(in_array($defperm, $seen)) 
+                            {
+                                continue;
+                            }
+                            
+                            $seen[] = $defperm;
                             $datetime = str_replace(' ', 'T', esc_attr($row->post_modified)).'+00:00';
+                            
                             $xml.= '<url>'."\n";
-                            $xml.= '<loc>'.get_permalink($row->ID).'</loc>'."\n";
+                            $xml.= '<loc>'.esc_url($defperm).'</loc>'."\n";
+
+                            if(!empty($languages)) 
+                            {
+                                $curlang = apply_filters('wpml_current_language', NULL);
+                                foreach($languages as $langcode => $langinfo) 
+                                {
+                                    $transid = apply_filters('wpml_object_id', $row->ID, $match[1], false, $langcode);
+                                    if($transid) 
+                                    {
+                                        do_action('wpml_switch_language', $langcode);
+                                        $transperm = get_permalink($transid);
+                                        $xml.= '<xhtml:link rel="alternate" hreflang="'.esc_attr($langcode).'" href="'.esc_url($transperm).'"/>'."\n";
+                                    }
+                                }
+
+                                do_action('wpml_switch_language', $curlang);
+                                $xml.= '<xhtml:link rel="alternate" hreflang="x-default" href="'.esc_url($defperm).'"/>'."\n";
+                            }
+
                             $xml.= '<lastmod>'.esc_attr($datetime).'</lastmod>'."\n";
                             $xml.= '<changefreq>hourly</changefreq>'."\n";
                             $xml.= '<priority>0.99</priority>'."\n";
@@ -396,7 +575,28 @@ if(get_option('blog_public') == '1')
                 /**
                  * Query Categories
                 */
-                $cats = get_categories();
+                if(defined('ICL_SITEPRESS_VERSION')) 
+                {
+                    $cats = [];
+                    $deflang = apply_filters('wpml_default_language', NULL);
+                    $taxonomies = ['category'];
+                    
+                    $terms = get_terms([
+                        'taxonomy' => $taxonomies,
+                        'hide_empty' => true,
+                        'lang' => $deflang
+                    ]);
+                    
+                    if(!is_wp_error($terms)) 
+                    {
+                        $cats = $terms;
+                    }
+                } 
+                else 
+                {
+                    $cats = get_categories();
+                }
+                
                 if(!empty($cats))
                 {
                     /**
@@ -414,13 +614,38 @@ if(get_option('blog_public') == '1')
                     */
                     $xml = '<?xml version="1.0" encoding="UTF-8"?>'."\n";
                     $xml.= '<?xml-stylesheet type="text/xsl" href="'.plugin_dir_url(__FILE__).'light-xml-sitemap-public-sitemap.xsl"?>'."\n";
-                    $xml.= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'."\n";
+                    $xml.= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'."\n";
+
+                    if(defined('ICL_SITEPRESS_VERSION')) 
+                    {
+                        global $sitepress;
+                        $languages = apply_filters('wpml_active_languages', NULL, ['skip_missing' => 0]);
+                    }
 
                     foreach($cats as $cat)
                     {
                         $datetime = date('Y-m-d').'T'.date('H:i:s').'+00:00';
                         $xml.= '<url>'."\n";
-                        $xml.= '<loc>'.get_category_link($cat->term_id).'</loc>'."\n";
+                        $xml.= '<loc>'.esc_url(get_category_link($cat->term_id)).'</loc>'."\n";
+
+                        if(!empty($languages)) 
+                        {
+                            $curlang = apply_filters('wpml_current_language', NULL);
+                            foreach($languages as $langcode => $langinfo) 
+                            {
+                                $transid = apply_filters('wpml_object_id', $cat->term_id, 'category', false, $langcode);
+                                if($transid) 
+                                {
+                                    do_action('wpml_switch_language', $langcode);
+                                    $translink = get_category_link($transid);
+                                    $xml.= '<xhtml:link rel="alternate" hreflang="'.esc_attr($langcode).'" href="'.esc_url($translink).'"/>'."\n";
+                                }
+                            }
+
+                            do_action('wpml_switch_language', $curlang);
+                            $xml.= '<xhtml:link rel="alternate" hreflang="x-default" href="'.esc_url(get_category_link($cat->term_id)).'"/>'."\n";
+                        }
+
                         $xml.= '<lastmod>'.esc_attr($datetime).'</lastmod>'."\n";
                         $xml.= '<changefreq>monthly</changefreq>'."\n";
                         $xml.= '<priority>0.70</priority>'."\n";
@@ -442,7 +667,28 @@ if(get_option('blog_public') == '1')
                 /**
                  * Query Tags
                 */
-                $tags = get_tags();
+                if(defined('ICL_SITEPRESS_VERSION')) 
+                {
+                    $tags = [];
+                    $deflang = apply_filters('wpml_default_language', NULL);
+                    $taxonomies = ['post_tag'];
+                    
+                    $terms = get_terms([
+                        'taxonomy' => $taxonomies,
+                        'hide_empty' => true,
+                        'lang' => $deflang
+                    ]);
+                    
+                    if(!is_wp_error($terms)) 
+                    {
+                        $tags = $terms;
+                    }
+                } 
+                else 
+                {
+                    $tags = get_tags();
+                }
+                
                 if(!empty($tags))
                 {
                     /**
@@ -460,13 +706,38 @@ if(get_option('blog_public') == '1')
                     */
                     $xml = '<?xml version="1.0" encoding="UTF-8"?>'."\n";
                     $xml.= '<?xml-stylesheet type="text/xsl" href="'.plugin_dir_url(__FILE__).'light-xml-sitemap-public-sitemap.xsl"?>'."\n";
-                    $xml.= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'."\n";
+                    $xml.= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'."\n";
+
+                    if(defined('ICL_SITEPRESS_VERSION')) 
+                    {
+                        global $sitepress;
+                        $languages = apply_filters('wpml_active_languages', NULL, ['skip_missing' => 0]);
+                    }
 
                     foreach($tags as $tag)
                     {
                         $datetime = date('Y-m-d').'T'.date('H:i:s').'+00:00';
                         $xml.= '<url>'."\n";
-                        $xml.= '<loc>'.get_tag_link($tag->term_id).'</loc>'."\n";
+                        $xml.= '<loc>'.esc_url(get_tag_link($tag->term_id)).'</loc>'."\n";
+
+                        if(!empty($languages)) 
+                        {
+                            $curlang = apply_filters('wpml_current_language', NULL);
+                            foreach($languages as $langcode => $langinfo) 
+                            {
+                                $transid = apply_filters('wpml_object_id', $tag->term_id, 'post_tag', false, $langcode);
+                                if($transid) 
+                                {
+                                    do_action('wpml_switch_language', $langcode);
+                                    $translink = get_tag_link($transid);
+                                    $xml.= '<xhtml:link rel="alternate" hreflang="'.esc_attr($langcode).'" href="'.esc_url($translink).'"/>'."\n";
+                                }
+                            }
+
+                            do_action('wpml_switch_language', $curlang);
+                            $xml.= '<xhtml:link rel="alternate" hreflang="x-default" href="'.esc_url(get_tag_link($tag->term_id)).'"/>'."\n";
+                        }
+
                         $xml.= '<lastmod>'.esc_attr($datetime).'</lastmod>'."\n";
                         $xml.= '<changefreq>monthly</changefreq>'."\n";
                         $xml.= '<priority>0.70</priority>'."\n";

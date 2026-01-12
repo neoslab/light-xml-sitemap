@@ -3,7 +3,7 @@ Contributors: NeosLab
 Tags: XML sitemap, wordpress sitemap, wordpress XML sitemap, sitemap, light XML sitemap
 Requires at least: 4.9
 Tested up to: 6.9.0
-Stable tag: 2.3.6
+Stable tag: 2.3.7
 License URI: https://raw.githubusercontent.com/neoslab/light-xml-sitemap/refs/heads/main/LICENSE
 
 Light-XML Sitemap dynamically creates dynamic XML Sitemap that comply with Google Sitemap protocol.
@@ -23,6 +23,12 @@ Light-XML Sitemap dynamically creates dynamic XML Sitemap that comply with Googl
 1. A general view of the plugin "options" page.
 
 == Changelog ==
+
+= 2.3.7 (2026-01-12) =
+* Added WPML support for categories
+* Added WPML support for posts
+* Added WPML support for tags
+* Code revision and optimization
 
 = 2.3.6 (2025-12-29) =
 * Code revision and optimization
