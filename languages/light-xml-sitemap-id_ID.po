@@ -5,106 +5,105 @@ msgstr ""
 "Project-Id-Version: Light-XML Sitemap 2.3.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/light-xml-sitemap\n"
 "POT-Creation-Date: 2026-03-03 13:14:05+00:00\n"
+"PO-Revision-Date: 2026-03-03 14:00:00+00:00\n"
+"Last-Translator: \n"
+"Language-Team: Indonesian\n"
+"Language: id_ID\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2026-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: admin/class-light-xml-sitemap-admin.php:74
 msgid "Light-XML Sitemap"
-msgstr ""
+msgstr "Light-XML Sitemap"
 
 #: admin/class-light-xml-sitemap-admin.php:86
 msgid "Settings"
-msgstr ""
+msgstr "Pengaturan"
 
 #: admin/partials/light-xml-sitemap-admin-options.php:4
 msgid "Your settings have been successfully updated."
-msgstr ""
+msgstr "Pengaturan Anda berhasil diperbarui."
 
 #: admin/partials/light-xml-sitemap-admin-options.php:33
 msgid "Include Posts"
-msgstr ""
+msgstr "Sertakan Postingan"
 
 #: admin/partials/light-xml-sitemap-admin-options.php:41
 #: admin/partials/light-xml-sitemap-admin-options.php:53
 msgid "Do you want to include the posts into the sitemap."
-msgstr ""
+msgstr "Apakah Anda ingin menyertakan postingan ke dalam peta situs."
 
 #: admin/partials/light-xml-sitemap-admin-options.php:45
 msgid "Include Custom Post Types"
-msgstr ""
+msgstr "Sertakan Tipe Postingan Kustom"
 
 #: admin/partials/light-xml-sitemap-admin-options.php:64
 msgid "Include %s."
-msgstr ""
+msgstr "Sertakan %s."
 
 #: admin/partials/light-xml-sitemap-admin-options.php:72
 #: admin/partials/light-xml-sitemap-admin-options.php:88
 msgid "Do you want to include the pages into the sitemap."
-msgstr ""
+msgstr "Apakah Anda ingin menyertakan halaman ke dalam peta situs."
 
 #: admin/partials/light-xml-sitemap-admin-options.php:80
 msgid "Include Pages"
-msgstr ""
+msgstr "Sertakan Halaman"
 
 #: admin/partials/light-xml-sitemap-admin-options.php:92
 msgid "Include Categories"
-msgstr ""
+msgstr "Sertakan Kategori"
 
 #: admin/partials/light-xml-sitemap-admin-options.php:100
 msgid "Do you want to include the categories into the sitemap."
-msgstr ""
+msgstr "Apakah Anda ingin menyertakan kategori ke dalam peta situs."
 
 #: admin/partials/light-xml-sitemap-admin-options.php:104
 msgid "Include Tags"
-msgstr ""
+msgstr "Sertakan Tag"
 
 #: admin/partials/light-xml-sitemap-admin-options.php:112
 msgid "Do you want to include the tags into the sitemap."
-msgstr ""
+msgstr "Apakah Anda ingin menyertakan tag ke dalam peta situs."
 
 #: admin/partials/light-xml-sitemap-admin-options.php:116
 msgid "Include Author"
-msgstr ""
+msgstr "Sertakan Penulis"
 
 #: admin/partials/light-xml-sitemap-admin-options.php:124
 msgid "Do you want to include the authors into the sitemap."
-msgstr ""
+msgstr "Apakah Anda ingin menyertakan penulis ke dalam peta situs."
 
 #: admin/partials/light-xml-sitemap-admin-options.php:128
 msgid "Sitemap Name"
-msgstr ""
+msgstr "Nama Peta Situs"
 
 #: admin/partials/light-xml-sitemap-admin-options.php:129
 msgid "Enter the sitemap name"
-msgstr ""
+msgstr "Masukkan nama peta situs"
 
 #: admin/partials/light-xml-sitemap-admin-options.php:130
 msgid "Set an alternative name for the sitemap index (Leave empty to use the default: sitemap.xml)."
-msgstr ""
+msgstr "Tetapkan nama alternatif untuk indeks peta situs (Kosongkan untuk menggunakan default: sitemap.xml)."
 
 #: admin/partials/light-xml-sitemap-admin-options.php:133
 msgid "Update Settings"
-msgstr ""
-#. Plugin Name of the plugin/theme
-msgid "Light-XML Sitemap"
-msgstr ""
+msgstr "Perbarui Pengaturan"
 
 #. Plugin URI of the plugin/theme
 msgid "https://wordpress.org/plugins/light-xml-sitemap/"
-msgstr ""
+msgstr "https://wordpress.org/plugins/light-xml-sitemap/"
 
 #. Description of the plugin/theme
 msgid "Light-XML Sitemap dynamically creates dynamic XML Sitemap that comply with Google, Bing, Yahoo! and Ask.com Sitemap protocol."
-msgstr ""
+msgstr "Light-XML Sitemap secara dinamis membuat Peta Situs XML yang mematuhi protokol Google, Bing, Yahoo! dan Ask.com."
 
 #. Author of the plugin/theme
 msgid "NeosLab"
-msgstr ""
+msgstr "NeosLab"
 
 #. Author URI of the plugin/theme
 msgid "https://neoslab.com"
-msgstr ""
+msgstr "https://neoslab.com"
