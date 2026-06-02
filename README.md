@@ -29,6 +29,11 @@ Light-XML Sitemap dynamically creates XML Sitemaps that comply with the Google S
 
 ## Changelog
 
+### 2.3.9 (2026-06-02)
+
+- Fontawesome update
+- Code revision and optimization
+
 ### 2.3.8 (2026-03-03)
 
 - Fontawesome update
